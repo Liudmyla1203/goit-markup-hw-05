@@ -563,8 +563,13 @@ li {
   margin-top: 0;
   margin-bottom: 30px;
   box-sizing: border-box;
+  /* box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12); */
+}
+.counting-projects:hover {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .counting-projects:nth-child(3n) {
   margin-right: 0px;
@@ -602,7 +607,8 @@ li {
 .projects-description:last-child {
   margin-bottom: 0;
 }
-.animated:hover .projects-description {
+.link:hover .projects-description,
+.link:focus-within .projects-description {
   opacity: 1;
   color: var(--additional-text-color);
   background: rgba(33, 150, 243, 0.9);
@@ -612,9 +618,8 @@ li {
   top: 0;
 
   transform: translateY(0);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  /* transition: transform var(--timing-animation),
-    opacity var(--timing-animation, --timing-function); */
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .projects-name {
   /* display: inline-block; */
